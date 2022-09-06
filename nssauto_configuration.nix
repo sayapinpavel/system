@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let
-     PWD_libnss = builtins.toString ./.;
 in {
 
     imports = [
