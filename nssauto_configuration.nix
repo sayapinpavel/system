@@ -2,6 +2,7 @@
 let
      PWD_libnss = builtins.toString ./.;
 in {
+
     imports = [
 	<nixpkgs/nixos/modules/installer/virtualbox-demo.nix>
 	./custom-package/custom-package.nix
@@ -26,8 +27,7 @@ in {
     system.nssModules = pkgs.lib.mkForce [ pkgs.libnss-auto ];
 
     environment.etc = {
-#	"libnss-ato.conf".source = "${pkgs.libnss-auto}/etc/libnss-ato.conf";
-	"libnss-ato.conf".source = "${PWD_libnss}/custom-package/libnss-auto/libnss-ato.conf";
+	"libnss-ato.conf".source = "${pkgs.libnss-auto}/etc/libnss-ato.conf";
     };
 
 }
