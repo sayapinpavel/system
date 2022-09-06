@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out/lib
     mkdir -p $out/etc
-    echo "my_user1:x:1022:1022:Test User,,,:/home/test:/bin/bash" > $out/etc/libnss-ato.conf
+    echo "my_user1:x:1022:1022:Test User,,,:/home/my_user1:/bin/bash" > $out/etc/libnss-ato.conf
     mv libnss_ato.so.2 $out/lib
   '';
 }
